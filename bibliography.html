@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIP — Bibliography</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .bib-section { margin-bottom: 3rem; }
+  .bib-section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.05em;
+    border-bottom: 3px solid var(--ink);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .bib-entry {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1.25rem 1.5rem;
+    background: var(--white);
+    border-left: 4px solid #ddd;
+    margin-bottom: 0.75rem;
+    transition: border-color 0.2s;
+  }
+  .bib-entry:hover { border-left-color: var(--red); }
+  .bib-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    color: var(--red);
+    min-width: 28px;
+    line-height: 1.4;
+  }
+  .bib-text {
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: #333;
+    font-weight: 300;
+  }
+  .bib-text strong { font-weight: 600; color: var(--ink); }
+  .bib-text em { font-style: italic; color: #555; }
+  .bib-tag {
+    display: inline-block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    padding: 0.1rem 0.45rem;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    background: var(--light);
+    color: var(--mid);
+  }
+  .bib-tag.book { background: #1a3c8e; color: white; }
+  .bib-tag.journal { background: #1a6a3c; color: white; }
+  .bib-tag.news { background: var(--mid); color: white; }
+  .bib-tag.gov { background: #6a3c1a; color: white; }
+  .bib-tag.website { background: #444; color: white; }
+
+  .chapter-index {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+  .chapter-pill {
+    background: var(--ink);
+    color: #ccc;
+    padding: 0.75rem 1rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    border: none;
+    text-align: left;
+    transition: background 0.2s;
+  }
+  .chapter-pill:hover, .chapter-pill.active { background: var(--red); color: white; }
+  .chapter-pill span { display: block; font-size: 0.65rem; font-family: 'DM Sans', sans-serif; font-weight: 300; color: #aaa; margin-top: 0.15rem; letter-spacing: 0; }
+  .chapter-pill.active span, .chapter-pill:hover span { color: rgba(255,255,255,0.7); }
+
+  .note-box {
+    background: var(--ink);
+    color: #ccc;
+    padding: 1.5rem 2rem;
+    border-left: 4px solid var(--gold);
+    font-size: 0.88rem;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+  .note-box strong { color: white; }
+
+  @media (max-width: 700px) {
+    .chapter-index { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">M<span>|</span>P</a>
+  <a href="history.html">History</a>
+  <a href="misinformation.html">Misinformation</a>
+  <a href="polarization.html">Polarization</a>
+  <a href="socialmedia.html">Social Media</a>
+  <a href="campaigning.html">Campaigning</a>
+  <a href="random.html">Random</a>
+  <a href="cartoons.html">Cartoons</a>
+  <a href="conclusion.html">Conclusion</a>
+  <a href="bibliography.html" class="active">Bibliography</a>
+</nav>
+
+<div class="page-hero">
+  <div class="section-label">Sources &amp; Further Reading</div>
+  <h1>Biblio<em>graphy</em></h1>
+</div>
+
+<div class="content">
+
+
+  <div class="bib-section" id="history">
+    <h2>Background</h2>
+
+<div class="bib-entry">
+  <div class="bib-num">1</div>
+  <div class="bib-text">
+    <strong>Kryzanek, Michael.</strong> “The Role of the Media in American Politics.” <em>Bridgewater State University</em>, July 26, 2024.
+    <span class="bib-tag website">Website</span>
+  </div>
+</div>
+
+<footer style="background:var(--ink);color:#666;text-align:center;padding:2rem;font-size:0.8rem;letter-spacing:0.05em;margin-top:3rem;">
+  MEDIA IN POLITICS &nbsp;|&nbsp; BY ANUPAMA BARUA</a>
+</footer>
+
+<script>
+function jump(id) {
+  document.querySelectorAll('.chapter-pill').forEach(b => b.classList.remove('active'));
+  event.target.closest('.chapter-pill').classList.add('active');
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIP — Media in Politics</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .hero-home {
+    background: var(--ink);
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-home::after {
+    content: 'MIP';
+    position: absolute;
+    right: -2rem;
+    bottom: -4rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28vw;
+    color: rgba(255,255,255,0.03);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+  .hero-home h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 12vw, 10rem);
+    color: var(--white);
+    line-height: 0.88;
+    letter-spacing: 0.01em;
+  }
+  .hero-home h1 .accent { color: var(--red); }
+  .hero-sub {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    color: #bbb;
+    font-style: italic;
+    max-width: 500px;
+    font-weight: 300;
+  }
+  .hero-home .btn { margin-top: 2.5rem; }
+
+  .why-section { padding: 5rem 3rem; background: var(--paper); }
+  .why-section .section-label { margin-bottom: 1rem; }
+  .why-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    max-width: 700px;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  .why-section p {
+    max-width: 650px;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #444;
+    font-weight: 300;
+    margin-bottom: 1rem;
+  }
+
+  .nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0;
+    border-top: 3px solid var(--ink);
+    border-left: 3px solid var(--ink);
+  }
+  .nav-card {
+    border-right: 3px solid var(--ink);
+    border-bottom: 3px solid var(--ink);
+    padding: 2rem 1.5rem;
+    text-decoration: none;
+    color: var(--ink);
+    background: var(--paper);
+    transition: background 0.2s;
+    display: block;
+  }
+  .nav-card:hover { background: var(--ink); color: var(--white); }
+  .nav-card:hover .nav-card-num { color: var(--red); }
+  .nav-card-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: #ddd;
+    line-height: 1;
+  }
+  .nav-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.05em;
+    margin-top: 0.5rem;
+    margin-bottom: 0.3rem;
+  }
+  .nav-card p { font-size: 0.82rem; color: #777; }
+  .nav-card:hover p { color: #aaa; }
+
+  /* Poll */
+  .poll-section {
+    background: var(--light);
+    padding: 4rem 3rem;
+    border-top: 3px solid var(--ink);
+  }
+  .poll-section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 2rem;
+  }
+  .poll-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+  .poll-btn {
+    background: var(--ink);
+    color: var(--white);
+    border: none;
+    padding: 0.6rem 1.4rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    letter-spacing: 0.08em;
+    margin-top: 1.5rem;
+  }
+  .poll-btn:hover { background: var(--red); }
+  .poll-voted { font-size: 0.85rem; color: var(--mid); margin-top: 0.75rem; font-style: italic; }
+  .poll-sources { display: flex; flex-direction: column; gap: 0.6rem; }
+  .source-opt {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    padding: 0.4rem 0;
+  }
+  .source-opt input { width: 18px; height: 18px; cursor: pointer; accent-color: var(--red); }
+  .source-opt label { cursor: pointer; font-size: 0.95rem; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">M<span>|</span>P</a>
+  <a href="history.html">History</a>
+  <a href="misinformation.html">Misinformation</a>
+  <a href="polarization.html">Polarization</a>
+  <a href="socialmedia.html">Social Media</a>
+  <a href="campaigning.html">Campaigning</a>
+  <a href="random.html">Random</a>
+  <a href="cartoons.html">Cartoons</a>
+  <a href="conclusion.html">Conclusion</a>
+  <a href="bibliography.html">Bibliography</a>
+</nav>
+
+<section class="hero-home">
+  <h1>
+    HOW MEDIA<br><span class="accent">SHAPES</span><br>POLITICS
+  </h1>
+  <p class="hero-sub">A Project for my Government Class. By Anupama Barua</p>
+  <a href="history.html" class="btn">Start Exploring →</a>
+</section>
+
+<section class="why-section">
+  <div style="max-width:1100px; margin:0 auto;">
+    <div class="section-label">Why It Matters</div>
+    <p>Everyday people interact with all sorts of media. In politics, the media is often considered the “fourth estate" of the government. Media is important in politics because it “educates, informs and entertains” voters.  In American politics, the media shapes public opinion by spreading candidates' messages through campaigns. These campaigns are spread through social media, TV, podcasts, and online news. </p>
+    <p>This site digs deeper into the roles of media in poltics.</p>
+  </div>
+</section>
+<section class="poll-section" style="margin-top: 4rem;">
+  <div style="max-width:1100px; margin:0 auto;">
+    <h2>Where Do YOU Get Your News?</h2>
+    <div class="poll-grid">
+      <div>
+        <div class="poll-sources" id="pollSources">
+          <label class="source-opt"><input type="radio" name="news" value="Social Media"> <span>Social Media</span></label>
+          <label class="source-opt"><input type="radio" name="news" value="TV News"> <span>TV News</span></label>
+          <label class="source-opt"><input type="radio" name="news" value="Online News"> <span>Online News Websites</span></label>
+          <label class="source-opt"><input type="radio" name="news" value="Podcasts"> <span>Podcasts</span></label>
+          <label class="source-opt"><input type="radio" name="news" value="Print / Newspaper"> <span>Print / Newspaper</span></label>
+          <label class="source-opt"><input type="radio" name="news" value="Word of Mouth"> <span>Word of Mouth / Friends</span></label>
+        </div>
+        <button class="poll-btn" onclick="submitPoll()">Submit Vote</button>
+        <div class="poll-voted" id="pollVoted"></div>
+      </div>
+      <div id="pollResults" style="display:none">
+        <div class="section-label">Live Results</div>
+        <div id="pollBars" style="margin-top:1rem;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:var(--ink);color:#666;text-align:center;padding:2rem;font-size:0.8rem;letter-spacing:0.05em;">
+  MIP MEDIA IN POLITICS &nbsp;|&nbsp; BY ANUPAMA BARUA
+</footer>
+
+<script>
+const pollData = {
+  "Social Media": 38,
+  "TV News": 22,
+  "Online News": 19,
+  "Podcasts": 11,
+  "Print / Newspaper": 5,
+  "Word of Mouth": 5
+};
+
+function submitPoll() {
+  const selected = document.querySelector('input[name="news"]:checked');
+  if (!selected) { document.getElementById('pollVoted').textContent = 'Please select an option first!'; return; }
+  pollData[selected.value]++;
+  document.getElementById('pollVoted').textContent = `Thanks for voting! You picked: ${selected.value}`;
+  document.getElementById('pollResults').style.display = 'block';
+  renderBars();
+}
+
+function renderBars() {
+  const total = Object.values(pollData).reduce((a,b)=>a+b,0);
+  const container = document.getElementById('pollBars');
+  container.innerHTML = Object.entries(pollData).map(([label, count]) => {
+    const pct = Math.round(count/total*100);
+    return `<div class="poll-option">
+      <span class="poll-label">${label}</span>
+      <div class="poll-bar-wrap"><div class="poll-bar" style="width:${pct}%"></div></div>
+      <span class="poll-pct">${pct}%</span>
+    </div>`;
+  }).join('');
+}
+</script>
+</body>
+</html>

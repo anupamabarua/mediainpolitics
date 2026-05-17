@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIP — History of Media & Politics</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .timeline { position: relative; padding: 2rem 0; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0; bottom: 0;
+    width: 4px;
+    background: var(--ink);
+  }
+  .t-event {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 0;
+    position: relative;
+    align-items: flex-start;
+    padding: 2rem 0;
+  }
+  .t-event:nth-child(odd) { flex-direction: row-reverse; }
+  .t-event:nth-child(odd) .t-content { text-align: right; }
+  .t-year {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--red);
+    color: var(--white);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    padding: 0.3rem 0.8rem;
+    z-index: 2;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    white-space: nowrap;
+  }
+  .t-year:hover { background: var(--ink); transform: translateX(-50%) scale(1.05); }
+  .t-content {
+    flex: 1;
+    max-width: calc(50% - 60px);
+  }
+  .t-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .t-desc {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: #555;
+    font-weight: 300;
+  }
+  .t-detail {
+    display: none;
+    margin-top: 1rem;
+    background: var(--ink);
+    color: #ddd;
+    padding: 1rem 1.25rem;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    border-left: 3px solid var(--red);
+  }
+  .t-detail.open { display: block; animation: fadeIn 0.3s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 700px) {
+    .timeline::before { left: 20px; }
+    .t-event, .t-event:nth-child(odd) { flex-direction: column; padding-left: 50px; }
+    .t-event:nth-child(odd) .t-content { text-align: left; }
+    .t-year { left: 20px; }
+    .t-content { max-width: 100%; }
+  }
+
+  .bg-info {
+    background: var(--white);
+    border: 1px solid #e0dbd2;
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
+  .bg-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+  }
+  .bg-info p { font-size: 0.95rem; line-height: 1.7; color: #555; font-weight: 300; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">M<span>|</span>P</a>
+  <a href="history.html" class="active">History</a>
+  <a href="misinformation.html">Misinformation</a>
+  <a href="polarization.html">Polarization</a>
+  <a href="socialmedia.html">Social Media</a>
+  <a href="campaigning.html">Campaigning</a>
+  <a href="random.html">Random</a>
+  <a href="cartoons.html">Cartoons</a>
+  <a href="conclusion.html">Conclusion</a>
+  <a href="bibliography.html">Bibliography</a>
+</nav>
+
+<div class="page-hero">
+  <h1>The <em>History</em><br>of Media IN<br>Politics</h1>
+</div>
+
+<div class="content">
+  <div class="bg-info">
+    <h2>Background</h2>
+    <p>The media has been a part of American politics since the beginning of the nation's founding. In the colonial era, newspapers were used to spread political ideas. Over time, media has evolved from newspapers, to radio, television, and now social media. Each media shifted how politicians reached their voters. The radio let them speak directly to the public, television made appearance and speech more important, and social media allows campaigns to reach audiences at their fingertips.</p>
+  </div>
+
+  <div class="section-label">Interactive Timeline — Click a year to expand</div>
+
+  <div class="timeline">
+
+    <div class="t-event">
+      <div class="t-year" onclick="toggle('e1')">1690</div>
+      <div class="t-content">
+        <div class="t-title">First Newspaper in America</div>
+        <div class="t-desc">The first newspaper in America that was published was "Publick Occurrences, Both Foreign and Domestick" printed by Benjamin Harris on September 25, 1690. It was supposed to be a monthly newspaper that informed readers about local and national events but after four days, the Massachusetts governor shut it down.</div>
+        <div class="t-detail" id="e1">A major time period of American newspapers was the Part Press Era (1783–1833). In this time period, editors of newspapers would endorse a political party's candidates and spread their principles in their newspaper and in return would receive financial support. The beginning of the Party Press Era aligned with the creation of the first party systems.</div>
+      </div>
+      <div class="t-content"></div>
+    </div>
+
+    <div class="t-event">
+      <div class="t-year" onclick="toggle('e2')">1920</div>
+      <div class="t-content">
+        <div class="t-title">Radio Enters Politics</div>
+        <div class="t-desc">In the 1920s, radio news made its first appearance. Politicians realized that this type of media was a way to reach the public in a personal manner. Warren Harding was the first president to regularly give speeches over the radio, but it was Franklin D. Roosevelt made radio speeches famous. His speeches became known as “fireside chats”. He spoke directly to the people and addressed them as equals.</div>
+        <div class="t-detail" id="e2">Comedy programs became popular because listeners were trying to find humor during the great depression. By 1940, almost 82% of households had a radio. World War II changed radio news forever. The need for frequent updates made radio a more immediate source of information than newspaper.The Radio Act (1927) created the Federal Radio Commission (FRC), which set standards and frequencies for stations. This didn't work out well so The Communications Act of 1934 ended the FRC and created the Federal Communications Commission (FCC), which continued to work with radio stations to assign frequencies and set national standards.</div>
+      </div>
+      <div class="t-content"></div>
+    </div>
+
+    <div class="t-event">
+      <div class="t-year" onclick="toggle('e3')">1960</div>
+      <div class="t-content">
+        <div class="t-title">The First Televised Presidential Debate</div>
+        <div class="t-desc">In 1960, the first televised presidential debate happened between Nixon and Kennedy. People who listened to the radio favored Nixon more than Kennedy but people who watched television favored Kennedy more because he was carefully groomed (he wore makeup) and had good body language that made him seem presidential. Nixon was still recovering from illness and looked pale and refused makeup. Approximately 70 million Americans watched the first televised presidential debate. </div>
+        <div class="t-detail" id="e3">The first television advertisements were by presidential candidates Dwight D. Eisenhower and Adlai Stevenson in the early 1950s. In 1960, John F. Kennedy's campaign used a Hollywood-style approach to promote his image as young and vibrant.
+</div>
+      </div>
+      <div class="t-content"></div>
+    </div>
+
+
+    <div class="t-event">
+      <div class="t-year" onclick="toggle('e5')">1980</div>
+      <div class="t-content">
+        <div class="t-title">24-Hour News: CNN Launches</div>
+        <div class="t-desc">In 1980, CNN launched the world's first ever 24 hour television news network. This had positive and negative effects. On the positive side, people could follow live events and converge but critics argued that it made stories seem bigger than they are, have bias, and even cause viewer burnout. </div>
+        <div class="t-detail" id="e5">Before CNN, Americans got their news in short bursts with a paper in the morning and then an evening broadcast. With 24/7 coverage, networks needed to fill hours. Breaking news became a constant state rather than an exception. This made audiences expect continuous stimulation from news media.</div>
+      </div>
+      <div class="t-content"></div>
+    </div>
+
+    <div class="t-event">
+      <div class="t-year" onclick="toggle('e8')">2000</div>
+      <div class="t-content">
+        <div class="t-title">Politics Goes Online</div>
+        <div class="t-desc">In the 2000s, the internet and blogs changed campaigning. Political communication moved to websites, blogs, email, and online platforms to reach voters directly. This rise of cable television and the internet helped create a faster “24/7” presidency. Presidents and candidates had to constantly manage their public image and respond to news in real time.</div>
+      </div>
+      <div class="t-content"></div>
+    </div>
+
+    <div class="t-event">
+      <div class="t-year" onclick="toggle('e7')">2008</div>
+      <div class="t-content">
+        <div class="t-title">The First "Social Media Election"</div>
+        <div class="t-desc">In the mid 2000s, Social Media was created. In 2008, Barack Obama was the first president to use social media to campaign. He used  Facebook, Twitter, and email to connect with the voters rather than relying on traditional methods. Through social media, he raised 600 million dollars.</div>
+        <div class="t-detail" id="e7">He created his own website (MyBo) that let supporters create profiles, make plans, and organize events. He won the people over by being authentic. He showed his personal interests like music, basketball, and movies. It changed the way how politicians communicate with the public</div>
+      </div>
+      <div class="t-content"></div>
+    </div>
+
+    <div class="t-event">
+      <div class="t-year" onclick="toggle('e9')">2020s</div>
+      <div class="t-content">
+        <div class="t-title">TikTok & Podcasts </div>
+        <div class="t-desc">Short-form video, long-form podcasts, and newsletter media replace traditional TV for younger generations. Political information now arrives through entertainment, memes, and algorithms tuned entirely to engagement.</div>
+        <div class="t-detail" id="e9">Today there is no single mass media for news. A person from the younger generation might get their political information from Tikok. While a person from the older generation might get their news from facebook or TV.</div>
+      <div class="t-content"></div>
+    </div>
+
+  </div>
+
+  <!-- Quiz -->
+  <div class="quiz-box">
+    <h3>History Quiz</h3>
+
+    <div class="quiz-question" id="q1">
+      <p><strong>Q1:</strong> Which 1960 event first showed that a politician's appearance on TV mattered as much as their policies?</p>
+      <div class="quiz-options">
+        <button onclick="answer(this,'wrong','q1')">A) The Watergate hearings</button>
+        <button onclick="answer(this,'correct','q1')">B) The Kennedy-Nixon presidential debate</button>
+        <button onclick="answer(this,'wrong','q1')">C) FDR's fireside chats</button>
+        <button onclick="answer(this,'wrong','q1')">D) The launch of CNN</button>
+      </div>
+      <div class="quiz-feedback" id="q1-fb"></div>
+    </div>
+
+    <div class="quiz-question" id="q2">
+      <p><strong>Q2:</strong> Who was the first president to use social media in their campaign?</p>
+      <div class="quiz-options">
+        <button onclick="answer(this,'wrong','q2')">A) Donald Trump</button>
+        <button onclick="answer(this,'wrong','q2')">B) Hillary Clinton</button>
+        <button onclick="answer(this,'correct','q2')">C) Barack Obama</button>
+        <button onclick="answer(this,'wrong','q2')">D) Kamala Harris</button>
+      </div>
+      <div class="quiz-feedback" id="q2-fb"></div>
+    </div>
+
+    <div class="quiz-question" id="q3">
+      <p><strong>Q3:</strong> FDR's famous radio addresses to the public were called:</p>
+      <div class="quiz-options">
+        <button onclick="answer(this,'wrong','q3')">A) Presidential Podcasts</button>
+        <button onclick="answer(this,'correct','q3')">B) Fireside Chats</button>
+        <button onclick="answer(this,'wrong','q3')">C) The Radio Reports</button>
+        <button onclick="answer(this,'wrong','q3')">D) New Deal Broadcasts</button>
+      </div>
+      <div class="quiz-feedback" id="q3-fb"></div>
+    </div>
+  </div>
+</div>
+
+<footer style="background:var(--ink);color:#666;text-align:center;padding:2rem;font-size:0.8rem;letter-spacing:0.05em;margin-top:3rem;">
+<a>  MEDIA IN POLITICS &nbsp;|&nbsp; BY ANUPAMA BARUA</a>
+</footer>
+
+<script>
+function toggle(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle('open');
+}
+
+function answer(btn, result, qid) {
+  const opts = btn.parentElement.querySelectorAll('button');
+  opts.forEach(b => b.disabled = true);
+  btn.classList.add(result);
+  const fb = document.getElementById(qid + '-fb');
+  if (result === 'correct') {
+    fb.textContent = '✓ Correct! Great job.';
+    fb.style.color = '#4caf50';
+  } else {
+    fb.textContent = '✗ Not quite — try reviewing the timeline above!';
+    fb.style.color = '#e74c3c';
+  }
+}
+</script>
+</body>
+</html>

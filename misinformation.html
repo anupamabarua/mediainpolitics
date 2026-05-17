@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIP — Misinformation</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .define-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 3rem; }
+  .define-card {
+    padding: 2rem;
+    background: var(--white);
+  }
+  .define-card.dark { background: var(--ink); color: var(--white); }
+  .define-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 0.05em; margin-bottom: 0.75rem; }
+  .define-card.dark h3 { color: var(--red); }
+  .define-card p { font-size: 0.92rem; line-height: 1.7; font-weight: 300; }
+  .define-card.dark p { color: #ccc; }
+
+  /* Fake headline game */
+  .headline-game { margin: 2rem 0; }
+  .headlines { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .headline-card {
+    background: var(--white);
+    border: 2px solid #ddd;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.1s;
+    position: relative;
+  }
+  .headline-card:hover { border-color: var(--ink); transform: translateY(-2px); }
+  .headline-card.real { border-color: #4caf50; background: #f0fff0; }
+  .headline-card.fake { border-color: var(--red); background: #fff0f0; }
+  .headline-card .tag {
+    position: absolute;
+    top: 0.75rem; right: 0.75rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    padding: 0.2rem 0.5rem;
+    display: none;
+  }
+  .headline-card.real .tag { display: inline; background: #4caf50; color: white; }
+  .headline-card.fake .tag { display: inline; background: var(--red); color: white; }
+  .headline-source { font-size: 0.75rem; color: var(--mid); margin-bottom: 0.5rem; font-weight: 600; letter-spacing: 0.05em; }
+  .headline-text { font-family: 'Playfair Display', serif; font-size: 1.05rem; line-height: 1.4; }
+  .headline-explain { font-size: 0.82rem; color: #555; margin-top: 0.75rem; display: none; font-style: italic; }
+  .headline-card.real .headline-explain,
+  .headline-card.fake .headline-explain { display: block; }
+
+  /* Spread visualization */
+  .spread-steps { display: flex; align-items: stretch; gap: 0; margin: 1.5rem 0; overflow-x: auto; }
+  .spread-step {
+    flex: 1;
+    min-width: 130px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    background: var(--white);
+    border: 1px solid #ddd;
+    position: relative;
+  }
+  .spread-step + .spread-step::before {
+    content: '→';
+    position: absolute;
+    left: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: var(--red);
+    background: var(--paper);
+    z-index: 1;
+  }
+  .spread-step .icon { font-size: 2rem; margin-bottom: 0.5rem; }
+  .spread-step h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
+  .spread-step p { font-size: 0.78rem; color: var(--mid); line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">M<span>|</span>P</a>
+  <a href="history.html">History</a>
+  <a href="misinformation.html" class="active">Misinformation</a>
+  <a href="polarization.html">Polarization</a>
+  <a href="socialmedia.html">Social Media</a>
+  <a href="campaigning.html">Campaigning</a>
+  <a href="random.html">Random</a>
+  <a href="cartoons.html">Cartoons</a>
+  <a href="conclusion.html">Conclusion</a>
+  <a href="bibliography.html">Bibliography</a>
+</nav>
+
+<div class="page-hero">
+  <div class="section-label">Chapter 02</div>
+  <h1>Mis<em>information</em><br>& How It<br>Spreads</h1>
+</div>
+
+<div class="content">
+
+  <div class="define-grid">
+    <div class="define-card">
+      <h3>Information</h3>
+      <p>Information is data or knowledge that is factually correct and verifiable. Good information comes from credible sources and can be cross referenced with multiple sources. </p>
+    </div>
+    <div class="define-card dark">
+      <h3>Misinformation</h3>
+      <p>Misinformation is false or inaccurate information spread without the intent to cause harm. Disinformation is false content intentionally created and spread to deceive, manipulate, or harm someone</p>
+    </div>
+  </div>
+
+  <div class="section-label">Spot the Fake Headline</div>
+  <p style="font-size:0.9rem;color:var(--mid);margin-bottom:1.5rem;font-style:italic;">Click each headline to reveal whether it's REAL or FAKE.</p>
+
+  <div class="headlines headline-game" id="headlineGame">
+
+    <div class="headline-card" onclick="revealCard(this,'fake','This headline is FAKE. No law like this was propsed. This is a common style of political misinformation. It mixes a truth like social media regualtion debates with a false conclusion.')">
+      <div class="tag">FAKE</div>
+      <div class="headline-source">BREAKING NEWS ALERT</div>
+      <div class="headline-text">"Congress Passes Secret Law Giving Government Access to All Private Social Media Messages"</div>
+      <div class="headline-explain"></div>
+    </div>
+
+    <div class="headline-card" onclick="revealCard(this,'real','This is REAL. A 2018 MIT study published in Science found that false news spreads faster and reaches more people on Twitter.')">
+      <div class="tag">REAL</div>
+      <div class="headline-source">MIT STUDY / SCIENCE JOURNAL</div>
+      <div class="headline-text">"False News Spreads Faster and Wider Than True News on Twitter, Study Finds"</div>
+      <div class="headline-explain"></div>
+    </div>
+
+    <div class="headline-card" onclick="revealCard(this,'fake','This headline is FAKE. This type of headline uses an well known name and a shocking claim to seem real. Always look for: Who said it? When? Where can I verify this quote?')">
+      <div class="tag">FAKE</div>
+      <div class="headline-source">PATRIOT TRUTH NETWORK</div>
+      <div class="headline-text">"CDC Director Admits Covid Vaccines Alter Human DNA in Closed-Door Meeting"</div>
+      <div class="headline-explain"></div>
+    </div>
+
+    <div class="headline-card" onclick="revealCard(this,'real','This is REAL. A 2024 Pew Research Center report found that about 50% of U.S. adults now get political news often or sometimes from social media, making it the most common source and overtaking TV for the first time.')">
+      <div class="tag">REAL</div>
+      <div class="headline-source">PEW RESEARCH CENTER</div>
+      <div class="headline-text">"Social Media Is Now Americans’ Most Common Source for Political News, Surpassing Television"</div>
+      <div class="headline-explain"></div>
+    </div>
+
+    <div class="headline-card" onclick="revealCard(this,'fake','This is FAKE. This is an example of a manipulated statistic. Polls do show declining trust in media, but headlines that inflate or misrepresent poll numbers are a common form of misinformation. Always look for the original poll source.')">
+      <div class="tag">FAKE</div>
+      <div class="headline-source">THE DAILY ALERT</div>
+      <div class="headline-text">"New Poll: 97% of Americans Say They No Longer Trust Any Mainstream News Source"</div>
+      <div class="headline-explain"></div>
+    </div>
+
+    <div class="headline-card" onclick="revealCard(this,'real','This is REAL. It comes from a credible source and is confirmed my multiple U.S. Government agencies.')">
+
+      <div class="headline-source">FBI</div>
+      <div class="headline-text">"Russian Interference in 2016 U.S. Elections"</div>
+      <div class="headline-explain"></div>
+    </div>
+
+  </div>
+
+  <hr class="styled">
+
+  <div class="section-label">How Misinformation Spreads</div>
+
+<p style="font-size:1rem;line-height:1.85;font-weight:300;color:#444;max-width:750px;">
+Misinformation spreads in a variety of ways. It is a combination of human psychology, social media, and algorithms. People are more likely to share information that matches their beliefs, identity, or political views. Misinformation is often shared because it aligns with a person's values, not because it's true. Another way misinformation is spread is through social media. Platforms like TikTok and X/Twitter use algorithms that show users content that gets high engagement. This creates echo chambers. People mostly see content that aligns with their views which makes misinformation spread faster. In conclusion, misinformation spreads because it is emotionally appealing, fits people's beliefs, and is amplified by algorithms.
+</p>
+
+  <div class="card" style="margin-top:2rem;">
+    <div class="section-label">How to Spot Misinformation</div>
+    <br>
+    <div class="grid-3" style="gap:1.5rem;">
+      <div>
+        <strong style="font-size:1.1rem;">Check the Source</strong>
+        <p style="font-size:0.85rem;color:#555;margin-top:0.5rem;line-height:1.6;"></p>
+      </div>
+      <div>
+        <strong style="font-size:1.1rem;">Check the Date</strong>
+        <p style="font-size:0.85rem;color:#555;margin-top:0.5rem;line-height:1.6;"></p>
+      </div>
+      <div>
+        <strong style="font-size:1.1rem;">Reverse Image Search</strong>
+        <p style="font-size:0.85rem;color:#555;margin-top:0.5rem;line-height:1.6;"></p>
+      </div>
+      <div>
+        <strong style="font-size:1.1rem;">Read Beyond the Headline</strong>
+        <p style="font-size:0.85rem;color:#555;margin-top:0.5rem;line-height:1.6;"></p>
+      </div>
+      <div>
+        <strong style="font-size:1.1rem;">Cross-Reference</strong>
+        <p style="font-size:0.85rem;color:#555;margin-top:0.5rem;line-height:1.6;"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quiz -->
+  <div class="quiz-box" style="margin-top:3rem;">
+    <h3>Misinformation Quiz</h3>
+    <div class="quiz-question">
+      <p><strong>Q1:</strong> What is the difference between "misinformation" and "disinformation"?</p>
+      <div class="quiz-options">
+        <button onclick="answer(this,'wrong','mq1')">A) They mean exactly the same thing</button>
+        <button onclick="answer(this,'correct','mq1')">B) Disinformation is spread deliberately to deceive; misinformation may be accidental</button>
+        <button onclick="answer(this,'wrong','mq1')">C) Misinformation only appears online; disinformation is in print</button>
+        <button onclick="answer(this,'wrong','mq1')">D) Disinformation is always political; misinformation can be about anything</button>
+      </div>
+      <div class="quiz-feedback" id="mq1-fb"></div>
+    </div>
+    <div class="quiz-question">
+      <p><strong>Q2:</strong> According to MIT research, which spreads faster on social media?</p>
+      <div class="quiz-options">
+        <button onclick="answer(this,'wrong','mq2')">A) True news</button>
+        <button onclick="answer(this,'correct','mq2')">B) False news</button>
+        <button onclick="answer(this,'wrong','mq2')">C) They spread at the same rate</button>
+        <button onclick="answer(this,'wrong','mq2')">D) Satire</button>
+      </div>
+      <div class="quiz-feedback" id="mq2-fb"></div>
+    </div>
+  </div>
+</div>
+
+<footer style="background:var(--ink);color:#666;text-align:center;padding:2rem;font-size:0.8rem;letter-spacing:0.05em;margin-top:3rem;">
+  MEDIA IN POLITICS &nbsp;|&nbsp; BY ANUPAMA BARUA
+</footer>
+
+<script>
+function revealCard(card, type, explanation) {
+  if (card.classList.contains('real') || card.classList.contains('fake')) return;
+  card.classList.add(type);
+  card.querySelector('.headline-explain').textContent = explanation;
+}
+function answer(btn, result, qid) {
+  const opts = btn.parentElement.querySelectorAll('button');
+  opts.forEach(b => b.disabled = true);
+  btn.classList.add(result);
+  const fb = document.getElementById(qid + '-fb');
+  fb.textContent = result === 'correct' ? '✓ Correct!' : '✗ Not quite — review the definitions above.';
+  fb.style.color = result === 'correct' ? '#4caf50' : '#e74c3c';
+}
+</script>
+</body>
+</html>
