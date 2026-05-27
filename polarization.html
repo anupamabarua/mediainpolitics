@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIP — Political Polarization</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Feed simulator */
+  .feed-sim { margin: 2rem 0; }
+  .feed-tabs { display: flex; gap: 0; border-bottom: 3px solid var(--ink); }
+  .feed-tab {
+    padding: 0.75rem 1.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    background: var(--light);
+    border: none;
+    border-right: 1px solid #ccc;
+    transition: background 0.2s;
+  }
+  .feed-tab.active.left { background: #1a3c6e; color: white; }
+  .feed-tab.active.right { background: #8b1a1a; color: white; }
+  .feed-tab.active.neutral { background: var(--ink); color: white; }
+  .feed-panel { display: none; padding: 1.5rem; background: #f8f8f8; border: 1px solid #ddd; border-top: none; }
+  .feed-panel.active { display: block; }
+  .feed-post {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+  .feed-post .fp-source { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
+  .left-feed .fp-source { color: #1a3c6e; }
+  .right-feed .fp-source { color: #8b1a1a; }
+  .neutral-feed .fp-source { color: var(--mid); }
+  .feed-note {
+    background: var(--ink);
+    color: #ccc;
+    padding: 1rem 1.25rem;
+    font-size: 0.82rem;
+    font-style: italic;
+    margin-top: 1rem;
+    border-left: 3px solid var(--gold);
+  }
+
+  /* Why box */
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; margin: 2rem 0; }
+  .why-card { background: var(--white); padding: 1.75rem; }
+  .why-card h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.05em; margin-bottom: 0.75rem; }
+  .why-card p { font-size: 0.88rem; line-height: 1.65; color: #555; font-weight: 300; }
+
+  .spectrum {
+    display: flex;
+    height: 60px;
+    margin: 1.5rem 0;
+    border: 2px solid var(--ink);
+    overflow: hidden;
+  }
+  .spectrum-seg {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: white;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">M<span>|</span>P</a>
+  <a href="history.html">History</a>
+  <a href="misinformation.html">Misinformation</a>
+  <a href="polarization.html" class="active">Polarization</a>
+  <a href="socialmedia.html">Social Media</a>
+  <a href="campaigning.html">Campaigning</a>
+  <a href="random.html">Random</a>
+  <a href="cartoons.html">Cartoons</a>
+  <a href="conclusion.html">Conclusion</a>
+  <a href="bibliography.html">Bibliography</a>
+</nav>
+
+<div class="page-hero">
+  <div class="section-label">Chapter 03</div>
+  <h1>Political<br><em>Polarization</em><br>& Echo Chambers</h1>
+
+</div>
+
+<div class="content">
+
+  <div class="card" style="margin-bottom:2rem;">
+    <div class="section-label">What Is Poltical Polarization?</div>
+    <br>
+    <p style="font-size:1rem;line-height:1.75;font-weight:300;color:#444;">Political polarization is the growing ideology of the division of two political systems. Recently, individuals have aligned with extreme positions rather than moderate viewpoints. In the last 25 years, Democrats and Republicans have moved further apart from each other.</p>
+  </div>
+
+  <!-- Political spectrum visual -->
+  <div class="section-label">The Political Spectrum</div>
+  <div class="spectrum">
+    <div class="spectrum-seg" style="background:#1a3c8e;flex:2;">FAR LEFT</div>
+    <div class="spectrum-seg" style="background:#2255bb;flex:2;">LEFT</div>
+    <div class="spectrum-seg" style="background:#4477cc;flex:1.5;">CENTER-LEFT</div>
+    <div class="spectrum-seg" style="background:#888;flex:2;color:white;">CENTER</div>
+    <div class="spectrum-seg" style="background:#cc5544;flex:1.5;">CENTER-RIGHT</div>
+    <div class="spectrum-seg" style="background:#bb2222;flex:2;">RIGHT</div>
+    <div class="spectrum-seg" style="background:#881a1a;flex:2;">FAR RIGHT</div>
+  </div>
+  <p style="font-size:0.82rem;color:var(--mid);font-style:italic;margin-bottom:2.5rem;">Over the years Americans have moved further away from the center and more towards the extreme right or left. </p>
+  <div class="card" style="margin-bottom:2rem;">
+    <div class="section-label">What Is A Echo Chamber?</div>
+    <br>
+    <p style="font-size:1rem;line-height:1.75;font-weight:300;color:#444;">An Echo Chamber is an environment where your beliefs, ideas, or assumptions are constantly repeated and reinforced. An echo chamber on social media is a digital environment where your existing beliefs are constantly reinforced. </p>
+  </div>
+  <!-- Echo chamber feed sim -->
+  <div class="section-label">Experience an Echo Chamber</div>
+  <p style="font-size:0.9rem;color:var(--mid);margin-bottom:1rem;font-style:italic;">Switch between feeds to see how differently the same political reality looks depending on what algorithm you're in.</p>
+
+  <div class="feed-sim">
+    <div class="feed-tabs">
+      <button class="feed-tab active left" onclick="showFeed('left', this)">🔵 Left-Leaning Feed</button>
+      <button class="feed-tab right" onclick="showFeed('right', this)">🔴 Right-Leaning Feed</button>
+      <button class="feed-tab neutral" onclick="showFeed('neutral', this)">⚪ Balanced Feed</button>
+    </div>
+<div class="feed-panel left-feed active" id="feed-left">
+  <div class="feed-post">
+    <div class="fp-source">DEMOCRACY NOW!</div>
+    <a href="https://www.democracynow.org/2026/5/9/doj_forever_bars_irs_from_probing" target="_blank" rel="noopener noreferrer">
+      "DOJ 'Forever' Bars IRS from Probing Trump, His Sons and Their Family Business"
+    </a>
+  </div>
+  <div class="feed-post">
+    <div class="fp-source">MEDIA MATTERS</div>
+    <a href="https://www.mediamatters.org/fox-news/fox-shrugs-maria-bartiromos-peddling-kind-racist-election-fraud-lies" target="_blank" rel="noopener noreferrer">
+      "Fox shrugs at Maria Bartiromo's peddling of 'kind of racist' election fraud lies"
+    </a>
+  </div>
+  <div class="feed-post">
+    <div class="fp-source">THE GUARDIAN</div>
+    <a href="https://www.theguardian.com/us-news/2024/oct/10/trump-false-claims-immigrants" target="_blank" rel="noopener noreferrer">
+      "Trump stands by false claims about immigrants"
+    </a>
+  </div>
+  <div class="feed-post">
+    <div class="fp-source">MEDIA MATTERS</div>
+    <a href="https://www.mediamatters.org/fox-news/fox-knows-its-lying-about-immigrants-and-disaster-aid" target="_blank" rel="noopener noreferrer">
+      "Fox knows it's lying about immigrants and disaster aid"
+    </a>
+  </div>
+  <div class="feed-post">
+    <div class="fp-source">DEMOCRACY NOW!</div>
+    <a href="https://www.democracynow.org/2026/5/9/doj_forever_bars_irs_from_probing" target="_blank" rel="noopener noreferrer">
+      "How the right-wing media machine is normalizing extremism — a deep dive"
+    </a>
+  </div>
+  <div class="feed-note">Notice that these posts criticize Trump, come from left leaning sources, and frame the story that paints the right party in a negative light.</div>
+</div>
+
+<div class="feed-panel right-feed" id="feed-right">
+  <div class="feed-post">
+    <div class="fp-source">WASHINGTON EXAMINER</div>
+    <a href="https://www.washingtonexaminer.com" target="_blank" rel="noopener noreferrer">
+      "Trump and his sons 'forever' exempt from tax audits under IRS addendum"
+    </a>
+  </div>
+  <div class="feed-post">
+    <div class="fp-source">NEW YORK POST</div>
+    <a href="https://nypost.com" target="_blank" rel="noopener noreferrer">
+      "Apple News promotes left-leaning media outlets — as it shuts out conservative sites entirely: study"
+    </a>
+  </div>
+  <div class="feed-post">
+    <div class="fp-source">DAILY CALLER</div>
+    <a href="https://dailycaller.com/2026/05/26/who-is-hasan-piker-federal-probe-investigation-cuba-susan-benjamin-jodie-evans-codepink/" target="_blank" rel="noopener noreferrer">
+      "Who is Hasan Piker? Federal probe investigation Cuba Susan Benjamin Jodie Evans Codepink"
+    </a>
+  </div>
+  <div class="feed-note">Notice that all three of these articles come from a conservative perspective. </div>
+</div>
+ <div class="feed-panel neutral-feed" id="feed-neutral">
+  <div class="feed-post">
+    <div class="fp-source">REUTERS</div>
+    <a href="https://www.reuters.com/world/china/global-markets-global-markets-2026-05-27/" target="_blank" rel="noopener noreferrer">
+      "Shares scale new peaks as markets eye shaky US-Iran truce"
+    </a>
+  </div>
+  <div class="feed-post">
+    <div class="fp-source">REUTERS</div>
+    <a href="https://www.reuters.com/world/europe/ukraines-capital-kyiv-hit-by-massive-missile-drone-attack-2026-05-23/" target="_blank" rel="noopener noreferrer">
+      "Russia hits Ukraine with Oreshnik missile in one of war's biggest attacks on Kyiv"
+    </a>
+  </div>
+  <div class="feed-post">
+    <div class="fp-source">ASSOCIATED PRESS</div>
+    <a href="https://apnews.com/article/democratic-national-committee-autopsy-2024-ken-martin-a4f67256b4c56ba076aece23c22728ad" target="_blank" rel="noopener noreferrer">
+      "Facing intense internal pressure, DNC releases postelection autopsy that criticizes Kamala Harris"
+    </a>
+  </div>
+  <div class="feed-post">
+    <div class="fp-source">ASSOCIATED PRESS</div>
+    <a href="https://apnews.com/article/iran-war-trump-agreement-republicans-criticism-7894b2f0e6459cddbcdaaaef5d5f1850" target="_blank" rel="noopener noreferrer">
+      "Republicans who have drawn a hard line on Iran pan Trump's emerging proposal to end the war"
+    </a>
+  </div>
+  <div class="feed-note">✓ Notice: These articles use neutral language and have real facts without being heavily filtered through either progressive or conservative commentary.</div>
+</div>
+
+  <hr class="styled">
+
+  <div class="section-label">Why Do Echo Chambers Form?</div>
+  <div class="why-grid">
+    <div class="why-card">
+      <h4>The Algorithm</h4>
+      <p>Social media is designed to make sure we only see media that fits our viewpoints. Regardless of the specific algorithm, social media is used to <a href="https://yipinstitute.org/article/the-echo-chamber-effect-social-medias-role-in-political-bias" target="_blank" rel="noopener noreferrer">"connect groups of like-minded users together based on shared content preferences."</a> The result is an echo chamber where users are constantly exposed to information that supports what they already believe. Instead of seeing a variety of perspectives, people are shown more content similar to what they have previously liked, shared, or interacted with. This can make political beliefs stronger and contribute to an increase of political polarization.</p>
+   </div>
+    <div class="why-card">
+      <h4>Confirmation Bias</h4>
+<p> Conformation bias is the human tendency to search for and interpret information that supports our preexisting beliefs. You can see confirmation bias when you read “fake news".  When we read fake news, we are more likely to agree with information that confirms our beliefs. This is how “fake news” aka misinformation spreads.</p>
+    </div>
+    <div class="why-card">
+      <h4>Poltical Identity</h4>
+      <p>In recent years, political parties have defined a person's identity. When a person feels like you are challenging their political views, it  feels like an attack on who they are.This makes people resist the other political party's information and leads to more political polarization as they dive deeper into the echo chamber they have created for themselves. </p>
+    </div>
+  </div>
+
+  <!-- Quiz -->
+  <div class="quiz-box" style="margin-top:3rem;">
+  <h3>Polarization Quiz</h3>
+  <div class="quiz-question">
+    <p><strong>Q1:</strong> What is political polarization?</p>
+    <div class="quiz-options">
+      <button onclick="answer(this,'wrong','pq1')">A) Increased cooperation between parties</button>
+      <button onclick="answer(this,'correct','pq1')">B) The growing division between political groups and movement toward more extreme viewpoints</button>
+      <button onclick="answer(this,'wrong','pq1')">C) A type of election campaign</button>
+      <button onclick="answer(this,'wrong','pq1')">D) A form of government</button>
+    </div>
+    <div class="quiz-feedback" id="pq1-fb"></div>
+  </div>
+  <div class="quiz-question">
+    <p><strong>Q2:</strong> What is confirmation bias?</p>
+    <div class="quiz-options">
+      <button onclick="answer(this,'wrong','pq2')">A) A law requiring fact-checking</button>
+      <button onclick="answer(this,'correct','pq2')">B) The tendency to seek information that supports existing beliefs</button>
+      <button onclick="answer(this,'wrong','pq2')">C) A social media algorithm</button>
+      <button onclick="answer(this,'wrong','pq2')">D) A type of election fraud</button>
+    </div>
+    <div class="quiz-feedback" id="pq2-fb"></div>
+  </div>
+  <div class="quiz-question">
+    <p><strong>Q3:</strong> What is one consequence of political identity becoming part of a person's self-image?</p>
+    <div class="quiz-options">
+      <button onclick="answer(this,'wrong','pq4')">A) People become less interested in politics</button>
+      <button onclick="answer(this,'wrong','pq4')">B) People are more open to opposing views</button>
+      <button onclick="answer(this,'correct','pq4')">C) Challenges to political beliefs can feel personal</button>
+      <button onclick="answer(this,'wrong','pq4')">D) Political parties disappear</button>
+    </div>
+    <div class="quiz-feedback" id="pq4-fb"></div>
+  </div>
+</div>
+
+<footer style="background:var(--ink);color:#666;text-align:center;padding:2rem;font-size:0.8rem;letter-spacing:0.05em;margin-top:3rem;">
+  MEDIA IN POLITICS &nbsp;|&nbsp; BY ANUPAMA BARUA
+</footer>
+
+<script>
+function showFeed(name, btn) {
+  document.querySelectorAll('.feed-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.feed-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('feed-' + name).classList.add('active');
+  btn.classList.add('active');
+}
+function answer(btn, result, qid) {
+  const opts = btn.parentElement.querySelectorAll('button');
+  opts.forEach(b => b.disabled = true);
+  btn.classList.add(result);
+  const fb = document.getElementById(qid + '-fb');
+  fb.textContent = result === 'correct' ? '✓ Correct!' : '✗ Not quite — re-read the explanations above.';
+  fb.style.color = result === 'correct' ? '#4caf50' : '#e74c3c';
+}
+</script>
+</body>
+</html>
