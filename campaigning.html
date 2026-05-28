@@ -38,28 +38,6 @@
   }
   .ig-post:hover .ig-overlay { display: flex; }
 
-  .ig-mock {
-    border: 1px solid #ddd;
-    max-width: 380px;
-  }
-  .ig-header {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid #eee;
-  }
-  .ig-avatar {
-    width: 36px; height: 36px;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.1rem;
-    flex-shrink: 0;
-  }
-  .ig-name { font-weight: 700; font-size: 0.85rem; }
-  .ig-handle { font-size: 0.75rem; color: #999; }
-  .ig-bio { font-size: 0.8rem; color: #555; padding: 0.5rem 1rem 1rem; }
-
   /* Ad breakdown */
   .ad-box {
     background: #f5f5f5;
@@ -115,8 +93,6 @@
   .tq-option:hover { background: #2a2a2a; border-color: var(--red); }
   .tq-option.selected-correct { background: #1a3a1a; border-color: #4caf50; color: #4caf50; }
   .tq-option.selected-wrong { background: #3a1a1a; border-color: var(--red); color: var(--red); }
-
-  .candidates-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
 </style>
 </head>
 <body>
@@ -128,7 +104,6 @@
   <a href="polarization.html">Polarization</a>
   <a href="socialmedia.html">Social Media</a>
   <a href="campaigning.html" class="active">Campaigning</a>
-  <a href="random.html">Random</a>
   <a href="cartoons.html">Cartoons</a>
   <a href="conclusion.html">Conclusion</a>
   <a href="bibliography.html">Bibliography</a>
@@ -136,126 +111,73 @@
 
 <div class="page-hero">
   <div class="section-label">Chapter 05</div>
-  <h1><em>Campaigning</em><br>in the Social<br>Media Age</h1>
-  <p>How presidential candidates use media to win hearts, minds, and votes. From FDR's radio to Trump's Twitter — and everything in between.</p>
+  <h1><em>Campaigning</em><br>on Social<br>Media</h1>
+  <p>How presidential candidates use media to win hearts, minds, and votes. From FDR's fireside chats to KamalaHQ.</p>
 </div>
 
 <div class="content">
 
   <div class="card" style="margin-bottom:2.5rem;">
     <div class="section-label">The Modern Campaign Playbook</div>
+    <P>Modern campaigns are focused on targeting specific voters instead of speaking to everybody. They use microtargeting, voter registration, and digital ads to find new supporters and current supporters. Social media is now a basic component of a campaign. Social media is a fast way to reach out to younger voters asking their support. </P>
     <br>
-    <p style="font-size:1rem;line-height:1.75;font-weight:300;color:#444;">Today's campaigns run 24/7 across a dozen platforms simultaneously. A candidate might post a policy video on YouTube, share a meme on Instagram, engage critics on X (Twitter), film behind-the-scenes on TikTok, run 50 different targeted Facebook ads at once, and appear on a podcast — all on the same day. Each platform has its own rules, audiences, and styles that campaigns must master.</p>
+    <p style="font-size:1rem;line-height:1.75;font-weight:300;color:#444;"></p>
   </div>
 
-  <!-- Instagram mock profiles -->
-  <div class="section-label">Past Presidential Candidates on Instagram</div>
-  <p style="font-size:0.88rem;color:var(--mid);margin-bottom:1.5rem;font-style:italic;">Hover over posts to see what each candidate's social strategy was about.</p>
+<!-- Past Presidential Candidates on Instagram -->
+<div class="section-label">Past Presidential Candidates on Instagram</div>
+<p style="font-size:0.88rem;color:var(--mid);margin-bottom:1.5rem;font-style:italic;">See how each candidate uses Instagram to communicate with the public.</p>
 
-  <div class="candidates-grid">
-    <!-- Obama -->
-    <div>
-      <div class="ig-mock">
-        <div class="ig-header">
-          <div class="ig-avatar" style="background:#1a3c8e;color:white;">🇺🇸</div>
-          <div>
-            <div class="ig-name">Barack Obama</div>
-            <div class="ig-handle">@barackobama</div>
-          </div>
-        </div>
-        <div class="ig-bio">44th President. Community organizer. Dad. Husband. Together, we can.</div>
-        <div class="instagram-grid">
-          <div class="ig-post" style="background:#d4e4f7">Hope<div class="ig-overlay">Famous "HOPE" poster imagery dominated his brand — optimistic, artistic, inspiring</div></div>
-          <div class="ig-post" style="background:#c8dff5">Town Hall<div class="ig-overlay">Regular town halls and community events showed accessibility — posted candid, not staged</div></div>
-          <div class="ig-post" style="background:#b8d0ee">Family<div class="ig-overlay">Family photos humanized him — "Dad in Chief" was a key part of his relatable image</div></div>
-          <div class="ig-post" style="background:#d4e4f7">Policy<div class="ig-overlay">Policy graphics explaining ACA, climate plans — educated followers, built credibility</div></div>
-          <div class="ig-post" style="background:#c8dff5">Sports<div class="ig-overlay">Basketball content connected to youth audiences and reinforced his "cool" image</div></div>
-          <div class="ig-post" style="background:#b8d0ee">Rally<div class="ig-overlay">Massive rally crowd photos showed momentum — social proof that his movement was big</div></div>
-        </div>
-      </div>
-      <p style="font-size:0.78rem;color:var(--mid);margin-top:0.5rem;font-style:italic;">Strategy: Hopeful, community-driven, policy-informed. First candidate to master digital organizing.</p>
-    </div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0;align-items:start;">
 
-    <!-- Trump -->
-    <div>
-      <div class="ig-mock">
-        <div class="ig-header">
-          <div class="ig-avatar" style="background:#c0392b;color:white;">🇺🇸</div>
-          <div>
-            <div class="ig-name">Donald Trump</div>
-            <div class="ig-handle">@realdonaldtrump</div>
-          </div>
-        </div>
-        <div class="ig-bio">45th & 47th President of the United States. Make America Great Again.</div>
-        <div class="instagram-grid">
-          <div class="ig-post" style="background:#f7d4d4">MAGA Rally<div class="ig-overlay">Massive rally crowd videos — showed enormous support and energy, created FOMO</div></div>
-          <div class="ig-post" style="background:#f5c8c8">Tweet Screenshot<div class="ig-overlay">His tweets were so newsworthy that screenshotting them became content — free media strategy</div></div>
-          <div class="ig-post" style="background:#f0b8b8">Endorsements<div class="ig-overlay">Celebrity and business leader endorsements were amplified heavily to build legitimacy</div></div>
-          <div class="ig-post" style="background:#f7d4d4">Media Attacks<div class="ig-overlay">"Fake News" attacks on CNN, NYT — rallied base against common enemy, media coverage followed</div></div>
-          <div class="ig-post" style="background:#f5c8c8">Golf / Lifestyle<div class="ig-overlay">Lifestyle content showed wealth and success — appealed to voters who wanted a "winner"</div></div>
-          <div class="ig-post" style="background:#f0b8b8">Attack Ads<div class="ig-overlay">Aggressive attack content against opponents — high engagement, controversy drove more reach</div></div>
-        </div>
-      </div>
-      <p style="font-size:0.78rem;color:var(--mid);margin-top:0.5rem;font-style:italic;">Strategy: Combative, anti-establishment, controversy-driven. Mastered earned media through provocation.</p>
-    </div>
+  <!-- Kamala -->
+  <div>
+    <p style="font-size:0.78rem;color:var(--mid);margin-bottom:0.5rem;font-weight:600;">@kamalaharris</p>
+    <blockquote class="instagram-media"
+      data-instgrm-permalink="https://www.instagram.com/kamalaharris/?utm_source=ig_embed&utm_campaign=loading"
+      data-instgrm-version="14"
+      style="width:100%;min-width:0;margin:0;">
+    </blockquote>
   </div>
 
-  <hr class="styled">
+  <!-- Trump -->
+  <div>
+    <p style="font-size:0.78rem;color:var(--mid);margin-bottom:0.5rem;font-weight:600;">@realdonaldtrump</p>
+    <blockquote class="instagram-media"
+      data-instgrm-permalink="https://www.instagram.com/realdonaldtrump/?utm_source=ig_embed&utm_campaign=loading"
+      data-instgrm-version="14"
+      style="width:100%;min-width:0;margin:0;">
+    </blockquote>
+  </div>
 
+</div>
+
+<!-- Single script tag, only once -->
+<script async src="//www.instagram.com/embed.js"></script>
   <!-- Ad breakdown quiz -->
-  <div class="section-label">Ad Breakdown: What Makes This Ad Work?</div>
-  <p style="font-size:0.88rem;color:var(--mid);margin-bottom:1.5rem;font-style:italic;">Read this real-style political ad, then identify the persuasion techniques being used.</p>
+  <div class="section-label">What Makes This Ad Work?</div>
+  <p style="font-size:0.88rem;color:var(--mid);margin-bottom:1.5rem;font-style:italic;">Watch this video and see how it persudes you</p>
 
   <div class="ad-box">
-    <div class="ad-label">SPONSORED · PAID FOR BY AMERICA FIRST PAC</div>
-    <div class="ad-headline">"Our Children Deserve Better"</div>
-    <div class="ad-body">
-      <p>Sarah is a teacher in Ohio. For 22 years, she's dedicated her life to her students. But under [Opponent's] policies, schools are struggling. Parents can't afford rent. Working families are left behind.</p>
-      <p style="margin-top:0.75rem;"><em>It doesn't have to be this way.</em></p>
-      <p style="margin-top:0.75rem;">[Candidate] will cut taxes for working families, protect our schools, and restore American values. Because our children deserve a future as great as our past.</p>
-      <p style="margin-top:0.75rem;font-weight:700;">I'm [Candidate], and I approve this message.</p>
-    </div>
+    <div class="ad-label">APPROVED BY KAMALA HARRIS PAID FOR BY HARRIS FOR PRESIDENT</div>
+    <div class="ad-headline">"Brighter Future | Kamala Harris’ Closing Ad"</div>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/U6bv6jYEVAs?si=4q32Qp3UBriaT-lX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
     <div class="ad-annotations">
       <div class="section-label" style="margin-bottom:1rem;">Identify The Techniques — Click all that apply:</div>
       <div id="tq-result"></div>
       <div class="tq-option" onclick="selectTechnique(this, true)">① Emotional storytelling — using a real person's story to create empathy and make abstract policy feel personal</div>
       <div class="tq-option" onclick="selectTechnique(this, false)">② Pure factual argument — listing statistics and policy details without emotional framing</div>
-      <div class="tq-option" onclick="selectTechnique(this, true)">③ Contrast framing — defining the opponent negatively, then offering the candidate as the solution</div>
+      <div class="tq-option" onclick="selectTechnique(this, true)">③ Contrast framing — defining the opposing candidate negatively, then offering the candidate as the solution</div>
       <div class="tq-option" onclick="selectTechnique(this, true)">④ Nostalgia appeal — "as great as our past" evokes a golden age, implying something was lost</div>
       <div class="tq-option" onclick="selectTechnique(this, false)">⑤ Policy specificity — providing detailed, verifiable policy positions with budget estimates</div>
-      <div class="tq-option" onclick="selectTechnique(this, true)">⑥ Values language — "American values," "working families," "our children" — broad appeal to shared identity</div>
+      <div class="tq-option" onclick="selectTechnique(this, true)">⑥ Language — "American values," "working families," "our children" — broad appeal to shared identity</div>
     </div>
   </div>
 
-  <!-- Quiz -->
-  <div class="quiz-box" style="margin-top:3rem;">
-    <h3>Campaigning Quiz</h3>
-    <div class="quiz-question">
-      <p><strong>Q1:</strong> What does "earned media" mean in political campaigning?</p>
-      <div class="quiz-options">
-        <button onclick="answer(this,'wrong','cq1')">A) Advertising that a campaign pays for directly</button>
-        <button onclick="answer(this,'correct','cq1')">B) Free news coverage a campaign gets through newsworthy actions or controversies — without paying for it</button>
-        <button onclick="answer(this,'wrong','cq1')">C) Donations from media companies to political campaigns</button>
-        <button onclick="answer(this,'wrong','cq1')">D) Social media followers a candidate earns through posting</button>
-      </div>
-      <div class="quiz-feedback" id="cq1-fb"></div>
-    </div>
-    <div class="quiz-question">
-      <p><strong>Q2:</strong> Which persuasion technique involves using a regular person's story to make a political argument feel personal and emotionally resonant?</p>
-      <div class="quiz-options">
-        <button onclick="answer(this,'wrong','cq2')">A) Policy specificity</button>
-        <button onclick="answer(this,'wrong','cq2')">B) Statistical framing</button>
-        <button onclick="answer(this,'correct','cq2')">C) Emotional storytelling</button>
-        <button onclick="answer(this,'wrong','cq2')">D) Contrast advertising</button>
-      </div>
-      <div class="quiz-feedback" id="cq2-fb"></div>
-    </div>
-  </div>
-</div>
 
 <footer style="background:var(--ink);color:#666;text-align:center;padding:2rem;font-size:0.8rem;letter-spacing:0.05em;margin-top:3rem;">
-    MEDIA IN POLITICS &nbsp;|&nbsp; BY ANUPAMA BARUA</a>
+  MEDIA IN POLITICS &nbsp;|&nbsp; BY ANUPAMA BARUA
 </footer>
 
 <script>
