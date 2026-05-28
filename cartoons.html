@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIP — Political Cartoons</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .cartoon-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0; }
+  .cartoon-card {
+    background: var(--white);
+    border: 1px solid #ddd;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .cartoon-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+  .cartoon-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cartoon-caption {
+    padding: 1.25rem;
+    border-top: 1px solid #eee;
+  }
+  .cartoon-caption h4 { font-family: 'Playfair Display', serif; font-size: 1rem; margin-bottom: 0.4rem; }
+  .cartoon-caption .c-era { font-size: 0.75rem; color: var(--mid); letter-spacing: 0.08em; font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem; }
+  .cartoon-caption p { font-size: 0.82rem; line-height: 1.6; color: #666; font-weight: 300; }
+
+  /* SVG cartoons — simple illustrated political cartoons */
+  .cartoon-img svg { width: 100%; height: 100%; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">M<span>|</span>P</a>
+  <a href="history.html">History</a>
+  <a href="misinformation.html">Misinformation</a>
+  <a href="polarization.html">Polarization</a>
+  <a href="socialmedia.html">Social Media</a>
+  <a href="campaigning.html">Campaigning</a>
+  <a href="random.html">Random</a>
+  <a href="cartoons.html" class="active">Cartoons</a>
+  <a href="conclusion.html">Conclusion</a>
+  <a href="bibliography.html">Bibliography</a>
+</nav>
+
+<div class="page-hero">
+  <div class="section-label">Chapter 07</div>
+  <h1>Political<br><em>Cartoons</em></h1>
+  <p>For centuries, political cartoonists have said with ink and irony what news reporters couldn't. A look at political satire as media and as history.</p>
+</div>
+
+<div class="content">
+
+  <div class="card" style="margin-bottom:2.5rem;">
+    <div class="section-label">Why Political Cartoons Matter</div>
+    <br>
+    <p style="font-size:1rem;line-height:1.75;font-weight:300;color:#444;">Political cartoons are important because they act as a powerful tool for free expression. They turn political events into vivid, accessible, and often funny visual commentary. This allows artists to criticize people of power and hold politicians accountable without censorship. Even with social media, cartoons connect everybody past and present. </p>
+  </div>
+
+  <div class="section-label">Examples</div>
+  <p style="font-size:0.88rem;color:var(--mid);margin-bottom:1.5rem;font-style:italic;">The history of poltical cartoons through the centuries!</p>
+
+  <div class="cartoon-grid">
+
+<!-- Cartoon 1: The Looking Glass 1787 -->
+<div class="cartoon-card">
+  <div class="cartoon-img">
+    <img src="https://firstamendmentmuseum.org/wp-content/uploads/2021/07/5.-Looking-Glass.png" alt="The Looking Glass for 1787" style="width:100%; height:100%; object-fit:cover;"/>
+  </div>
+  <div class="cartoon-caption">
+    <div class="c-era">1787 · Constitutional Ratification Era</div>
+    <h4>The Looking Glass for 1787</h4>
+    <p>"In this cartoon, both sides tug on a wagon representing Connecticut on the eve of the ratification of the Constitution."</p>
+  </div>
+</div>
+
+<!-- Cartoon 2: A Boxing Match -->
+<div class="cartoon-card">
+  <div class="cartoon-img">
+    <img src="https://firstamendmentmuseum.org/wp-content/uploads/2021/07/3.-A-Boxing-Match.png" alt="A Boxing Match" style="width:100%; height:100%; object-fit:cover;"/>
+  </div>
+  <div class="cartoon-caption">
+    <div class="c-era">1812 · War of 1812 Era</div>
+    <h4>A Boxing Match</h4>
+    <p>During the War of 1812, the artist portrays James Madison punching King George III in the face.</p>
+  </div>
+</div>
+
+<!-- Cartoon 3: Throwing Down the Ladder by Which They Rose -->
+<div class="cartoon-card">
+  <div class="cartoon-img">
+    <img src="https://firstamendmentmuseum.org/wp-content/uploads/2021/07/4.-Throwing-Down.jpg" alt="Throwing Down the Ladder by Which They Rose" style="width:100%; height:100%; object-fit:cover;"/>
+  </div>
+  <div class="cartoon-caption">
+    <div class="c-era">1870 · Reconstruction Era</div>
+    <h4>Throwing Down the Ladder by Which They Rose</h4>
+    <p>This cartoon shows anti-immigrant Americans throwing down the ladder in an attempt to deny Chinese immigrants entry into the U.S.</p>
+  </div>
+</div>
+
+<!-- Cartoon 4: The Blind Leading the Blind -->
+<div class="cartoon-card">
+  <div class="cartoon-img">
+    <img src="https://firstamendmentmuseum.org/wp-content/uploads/2021/07/14.-Bling-Leading-the-Blind.png" alt="The Blind Leading the Blind" style="width:100%; height:100%; object-fit:cover;"/>
+  </div>
+  <div class="cartoon-caption">
+    <div class="c-era">1945 · Post-WWII Era</div>
+    <h4>The Blind Leading the Blind</h4>
+    <p>The artist draws Uncle Sam leading a disheveled, bloodstained German out of the war-torn ruins of Europe.</p>
+  </div>
+</div>
+
+<!-- Cartoon 5: Welcome to McUSA -->
+<div class="cartoon-card">
+  <div class="cartoon-img">
+    <img src="https://firstamendmentmuseum.org/wp-content/uploads/2021/07/Welcome-to-McUSA.jpeg" alt="Welcome to McUSA" style="width:100%; height:100%; object-fit:cover;"/>
+  </div>
+  <div class="cartoon-caption">
+    <div class="c-era">1992 · Modern Era</div>
+    <h4>Welcome to McUSA</h4>
+    <p>By Ted Rall, one of the most prolific cartoonists in American history, this cartoon satirizes the corporatization of American culture.</p>
+  </div>
+</div>
+
+<!-- Cartoon 6: Lock Him Up -->
+<div class="cartoon-card">
+  <div class="cartoon-img">
+    <img src="https://firstamendmentmuseum.org/wp-content/uploads/2021/07/2017.02.16.immigrationarrest.jpg" alt="Lock Him Up" style="width:100%; height:100%; object-fit:cover;"/>
+  </div>
+  <div class="cartoon-caption">
+    <div class="c-era">2017 · Contemporary Era</div>
+    <h4>Lock Him Up</h4>
+    <p>By Andy Marlette, this cartoon critiques Donald Trump's immigration policies by depicting an ICE agent detaining Jesus, who would fit the profile of many immigrants in the U.S. today.</p>
+</div>
+  </div>
+
+  </div><!-- /.cartoon-grid -->
+</div><!-- /.content -->
+
+<footer style="background:var(--ink);color:#666;text-align:center;padding:2rem;font-size:0.8rem;letter-spacing:0.05em;margin-top:3rem;">
+  MEDIA IN POLITICS &nbsp;|&nbsp; BY ANUPAMA BARUA
+</footer>
+
+</body>
+</html>
+

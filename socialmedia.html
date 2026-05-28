@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIP — Social Media & Elections</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .age-tabs { display: flex; gap: 0; border-bottom: 3px solid var(--ink); flex-wrap: wrap; }
+  .age-tab {
+    padding: 0.75rem 1.25rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    background: var(--light);
+    border: none;
+    border-right: 1px solid #ccc;
+    transition: background 0.2s;
+  }
+  .age-tab.active { background: var(--ink); color: white; }
+  .age-panel { display: none; background: var(--white); border: 1px solid #ddd; border-top: none; padding: 2rem; }
+  .age-panel.active { display: block; }
+  .phone-mock {
+    width: 220px;
+    background: #111;
+    border-radius: 30px;
+    padding: 15px 10px;
+    margin: 0 auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+  .phone-screen {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+  .phone-header {
+    background: #f5f5f5;
+    padding: 8px 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .phone-feed { overflow-y: auto; flex: 1; padding: 8px; }
+  .phone-post {
+    background: white;
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    padding: 8px;
+    font-size: 0.68rem;
+    line-height: 1.4;
+  }
+  .phone-post .pp-label {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 3px;
+    font-size: 0.65rem;
+  }
+  .phone-actions { display: flex; gap: 8px; margin-top: 4px; color: #999; font-size: 0.6rem; }
+
+  .election-events { display: flex; flex-direction: column; gap: 1.5rem; margin: 2rem 0; }
+  .election-event {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+  .election-year {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: var(--red);
+    line-height: 1;
+  }
+  .election-event h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 0.4rem; }
+  .election-event p { font-size: 0.88rem; line-height: 1.65; color: #555; font-weight: 300; }
+
+  .influence-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 2rem 0; }
+  .inf-card { background: var(--ink); color: white; padding: 1.75rem; }
+  .inf-card .icon { font-size: 2rem; margin-bottom: 0.75rem; }
+  .inf-card h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.05em; color: var(--red); margin-bottom: 0.5rem; }
+  .inf-card p { font-size: 0.85rem; line-height: 1.6; color: #bbb; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">M<span>|</span>P</a>
+  <a href="history.html">History</a>
+  <a href="misinformation.html">Misinformation</a>
+  <a href="polarization.html">Polarization</a>
+  <a href="socialmedia.html" class="active">Social Media</a>
+  <a href="campaigning.html">Campaigning</a>
+  <a href="random.html">Random</a>
+  <a href="cartoons.html">Cartoons</a>
+  <a href="conclusion.html">Conclusion</a>
+  <a href="bibliography.html">Bibliography</a>
+</nav>
+
+<div class="page-hero">
+  <div class="section-label">Chapter 04</div>
+  <h1>Social Media<br>IN <em>Elections</em></h1>
+</div>
+
+<div class="content">
+
+  <div class="influence-cards">
+    <div class="inf-card">
+
+      <h4>Targeted Ads</h4>
+      <p>Political campaigns use the same tricks that behavioral ads do. Advertisements can persuade voters, increase knowledge, and  boost voter turnout.
+</p>
+    </div>
+    <div class="inf-card">
+      <h4>Influencers</h4>
+      <p>Political campaigns use social media creators to reach audiences. An example of this is Charlie Kirk. Kirk was a right leaning American political Activist. He co-founded the conservative student organization Turning Point USA in 2012 and served as its executive director until his assassination in 2025. He became the voice of the Maga youth. </p>
+   </div>
+    <div class="inf-card">
+      <h4>Viral Content</h4>
+      <p>There are different things that will go viral overnight. Social media has made political content more easy to share, therefore more readily accessible and seen. </p>
+   </div>
+  </div>
+
+  <hr class="styled">
+
+  <div class="section-label">Key Moments of Social Media in Elections</div>
+  <div class="election-events">
+    <div class="election-event">
+      <div class="election-year">2008</div>
+      <div>
+        <h4>Obama's Presidential Campaign</h4>
+        <p>In the mid 2000s, Social Media was created. In 2008, Barack Obama was the first president to use social media to campaign. He used  Facebook, Twitter, and email to connect with the voters rather than relying on traditional methods. Through social media, he raised 699 million dollars.
+</p>
+      </div>
+    </div>
+    <div class="election-event">
+      <div class="election-year">2016</div>
+      <div>
+        <h4>Disinformation </h4>
+        <p>In the 2016 election, the increase of support for Hillary Clinton led to a rise of disinformation that was created to target her. This led to a decrease of media coverage. The Clinton campaign changed their marketing tactics and focused more on conservative values rather than focusing on women rights. Overall, in the 2016 election there was disinformation being shared all around. </p>
+      </div>
+    </div>
+    <div class="election-event">
+      <div class="election-year">2020</div>
+      <div>
+        <h4>The Rise of Tiktok</h4>
+        <p>During the time of the 2020 election, the whole world was in a lock down. This led everybody to use technology more than they used too. The app Tiktok became a place where campaigns, supporters, and influences could read young people. Trump tried to ban Tiktok which led to the center of election politics. Tiktok was important for younger voters because it was a less traditional way to reach them. </p>
+      </div>
+    </div>
+    <div class="election-event">
+      <div class="election-year">2024</div>
+      <div>
+        <h4>Viral</h4>
+        <p>In 2024, TikTok was a major part in the upcoming election. Candidates and campaigns worked more directly with influencers. Campaigns had their own social media accounts like KamalaHQ, which is now Headquarters on TikTok. Kamala Harris used memes and viral clips to engage young voters. Some examples of this are <a href="https://www.youtube.com/watch?v=0bSTqokjNEE" target="_blank">Watch Kamala Harris' viral "coconut tree" remarks</a> and <a href="https://www.youtube.com/watch?v=Ly9UkxW7Fd8" target="_blank">Sisters: Kamala and Mya Harris Share A Great Moment</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="styled">
+
+  <div class="section-label">What Different Ages See On Social Media</div>
+  <div class="age-tabs">
+    <button class="age-tab active" onclick="showAge('teen', this)">Teen (13-17)</button>
+    <button class="age-tab" onclick="showAge('young', this)">Young Adult (18-29)</button>
+    <button class="age-tab" onclick="showAge('middle', this)">Adults (30-64)</button>
+    <button class="age-tab" onclick="showAge('senior', this)">Senior (65+)</button>
+  </div>
+
+  <div class="age-panel active" id="age-teen">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;">
+      <div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:0.75rem;">Platform: TikTok & Instagram</h3>
+        <p style="font-size:0.88rem;line-height:1.65;color:#555;font-weight:300;">Teenagers typically get their political information from Tiktok and Instagram through short form videos and influencers. 
+</p>
+        <br>
+ </div>
+      <div class="phone-mock">
+        <div class="phone-screen">
+          <div class="phone-header">TikTok For You Page</div>
+          <div class="phone-feed">
+<div class="phone-post"><div class="pp-label">@realdonaldtrump</div><a href="https://www.tiktok.com/@realdonaldtrump/video/7644364072405847327" target="_blank">Watch on TikTok ↗</a></div>
+<div class="phone-post"><div class="pp-label">@kamalaharris</div><a href="https://www.tiktok.com/@kamalaharris/video/7433943958029487391" target="_blank">Watch on TikTok ↗</a></div>
+<div class="phone-post"><div class="pp-label">@natebige</div><a href="https://www.tiktok.com/@natebige/video/7644361394783063309" target="_blank">Watch on TikTok ↗</a></div>
+<div class="phone-post"><div class="pp-label">@milliesmoochies</div><a href="https://www.tiktok.com/@milliesmoochies/video/7644331889016196383" target="_blank">Watch on TikTok ↗</a></div>
+<div class="phone-post"><div class="pp-label">@wscevl</div><a href="https://www.tiktok.com/@wscevl/video/7628087894321777942" target="_blank">Watch on TikTok ↗</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="age-panel" id="age-young">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;">
+      <div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:0.75rem;">Platform: Instagram / X (Twitter) / Reddit</h3>
+        <p style="font-size:0.88rem;line-height:1.65;color:#555;font-weight:300;">Social media is a major source for where young adults get their political information. The most common apps are Instigram, Tiktok, and X. 
+</p>
+        <br>
+ </div>
+      <div class="phone-mock">
+        <div class="phone-screen">
+          <div class="phone-header">Instagram Explore Page</div>
+          <div class="phone-feed">
+            <div class="phone-post"><div class="pp-label">@mocada_museum</div><a href="https://www.instagram.com/reel/DXz236DSvHN/" target="_blank">Watch on Instagram ↗</a></div>
+<div class="phone-post"><div class="pp-label">@whenweallvote</div><a href="https://www.instagram.com/p/DYpP03tlsXR/" target="_blank">Watch on Instagram ↗</a></div>
+<div class="phone-post"><div class="pp-label">@realdonaldtrump</div><a href="https://www.instagram.com/reel/DUskZAFAFvt/" target="_blank">Watch on Instagram ↗</a></div>
+<div class="phone-post"><div class="pp-label">@iamwesmoore</div><a href="https://www.instagram.com/reel/DW_l_MsgSjn/" target="_blank">Watch on Instagram ↗</a></div>
+<div class="phone-post"><div class="pp-label">@genzforchange</div><a href="https://www.instagram.com/reel/DYkfrMfDgyV/" target="_blank">Watch on Instagram ↗</a></div>
+ </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="age-panel" id="age-middle">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;">
+      <div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:0.75rem;"> Platform: Facebook & YouTube</h3>
+        <p style="font-size:0.88rem;line-height:1.65;color:#555;font-weight:300;">This age of people get their political information from a variety of sources. Facebook and Youtube are the main platforms. 30-49 year olds still use instagram as one of their main sources of information. </p>
+        <br>
+  </div>
+      <div class="phone-mock">
+        <div class="phone-screen">
+          <div class="phone-header">Facebook Home Page</div>
+          <div class="phone-feed">
+<div class="phone-post"><div class="pp-label">Facebook</div><a href="https://www.facebook.com/share/r/1DvbuPWyfj/?mibextid=wwXIfr" target="_blank">Watch on Facebook ↗</a></div>
+<div class="phone-post"><div class="pp-label">Facebook</div><a href="https://www.facebook.com/share/v/1AsNVPVTND/?mibextid=wwXIfr" target="_blank">Watch on Facebook ↗</a></div>
+<div class="phone-post"><div class="pp-label">Facebook</div><a href="https://www.facebook.com/share/r/1E5biW21ST/?mibextid=wwXIfr" target="_blank">Watch on Facebook ↗</a></div>
+<div class="phone-post"><div class="pp-label">Facebook</div><a href="https://www.facebook.com/share/r/19CjTZBHrH/?mibextid=wwXIfr" target="_blank">Watch on Facebook ↗</a></div>
+<div class="phone-post"><div class="pp-label">Facebook</div><a href="https://www.facebook.com/share/v/1GtSauucd8/?mibextid=wwXIfr" target="_blank">Watch on Facebook ↗</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="age-panel" id="age-senior">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;">
+      <div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:0.75rem;">Platform: Facebook, TV, & news websites</h3>
+        <p style="font-size:0.88rem;line-height:1.65;color:#555;font-weight:300;">Older adults are more likely to get their information from TV, Facebook, and news sites.  </p>
+        <br>
+        <p style="font-size:0.82rem;color:var(--mid);font-style:italic;">⚠️ Seniors are more likely to share misinformation on social media.</p>
+      </div>
+      <div class="phone-mock">
+        <div class="phone-screen">
+          <div class="phone-header">Facebook home page</div>
+          <div class="phone-feed">
+<div class="phone-post"><div class="pp-label">Facebook</div><a href="https://www.facebook.com/share/r/1DvbuPWyfj/?mibextid=wwXIfr" target="_blank">Watch on Facebook ↗</a></div>
+<div class="phone-post"><div class="pp-label">Facebook</div><a href="https://www.facebook.com/share/v/1AsNVPVTND/?mibextid=wwXIfr" target="_blank">Watch on Facebook ↗</a></div>
+<div class="phone-post"><div class="pp-label">Facebook</div><a href="https://www.facebook.com/share/r/1E5biW21ST/?mibextid=wwXIfr" target="_blank">Watch on Facebook ↗</a></div>
+<div class="phone-post"><div class="pp-label">Facebook</div><a href="https://www.facebook.com/share/r/19CjTZBHrH/?mibextid=wwXIfr" target="_blank">Watch on Facebook ↗</a></div>
+<div class="phone-post"><div class="pp-label">Facebook</div><a href="https://www.facebook.com/share/v/1GtSauucd8/?mibextid=wwXIfr" target="_blank">Watch on Facebook ↗</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quiz -->
+  <div class="quiz-box" style="margin-top:3rem;">
+    <h3>Social Media Quiz</h3>
+    <div class="quiz-question">
+      <p><strong>Q1:</strong> Which presidential election is generally considered the first to use social media as a major campaign tool?</p>
+      <div class="quiz-options">
+        <button onclick="answer(this,'wrong','sq1')">A) 2000 (Bush vs. Gore)</button>
+        <button onclick="answer(this,'wrong','sq1')">B) 2004 (Bush vs. Kerry)</button>
+        <button onclick="answer(this,'correct','sq1')">C) 2008 (Obama vs. McCain)</button>
+        <button onclick="answer(this,'wrong','sq1')">D) 2012 (Obama vs. Romney)</button>
+      </div>
+      <div class="quiz-feedback" id="sq1-fb"></div>
+    </div>
+    <div class="quiz-question">
+      <p><strong>Q2:</strong> Research shows which age group is MOST likely to share misinformation on social media?</p>
+      <div class="quiz-options">
+        <button onclick="answer(this,'wrong','sq2')">A) Teenagers (13-17)</button>
+        <button onclick="answer(this,'wrong','sq2')">B) Young adults (18-29)</button>
+        <button onclick="answer(this,'wrong','sq2')">C) Middle-aged adults (35-55)</button>
+        <button onclick="answer(this,'correct','sq2')">D) Seniors (65+)</button>
+      </div>
+      <div class="quiz-feedback" id="sq2-fb"></div>
+    </div>
+  </div>
+</div>
+
+<footer style="background:var(--ink);color:#666;text-align:center;padding:2rem;font-size:0.8rem;letter-spacing:0.05em;margin-top:3rem;">
+  MEDIA IN POLITICS &nbsp;|&nbsp; BY ANUPAMA BARUA
+</footer>
+
+<script>
+function showAge(name, btn) {
+  document.querySelectorAll('.age-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.age-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('age-' + name).classList.add('active');
+  btn.classList.add('active');
+}
+function answer(btn, result, qid) {
+  const opts = btn.parentElement.querySelectorAll('button');
+  opts.forEach(b => b.disabled = true);
+  btn.classList.add(result);
+  const fb = document.getElementById(qid + '-fb');
+  fb.textContent = result === 'correct' ? '✓ Correct!' : '✗ Not quite — review the content above.';
+  fb.style.color = result === 'correct' ? '#4caf50' : '#e74c3c';
+}
+</script>
+</body>
+</html>

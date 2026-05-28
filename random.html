@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIP — Alternative & Opinion Media</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .media-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+  .media-card {
+    background: var(--white);
+    border: 1px solid #ddd;
+    padding: 1.75rem;
+    position: relative;
+  }
+  .media-card .lean {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    padding: 0.2rem 0.5rem;
+  }
+  .lean-left { background: #1a3c8e; color: white; }
+  .lean-right { background: #8b1a1a; color: white; }
+  .lean-center { background: #555; color: white; }
+  .lean-opinion { background: var(--gold); color: var(--ink); }
+  .media-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+  .media-card .media-type {
+    font-size: 0.75rem;
+    color: var(--mid);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+  }
+  .media-card p {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: #555;
+    font-weight: 300;
+  }
+  .media-card .audience {
+    margin-top: 0.75rem;
+    font-size: 0.78rem;
+    color: #888;
+    font-style: italic;
+  }
+
+  /* Podcast section */
+  .podcast-list { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0; }
+  .podcast-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: var(--white);
+    border: 1px solid #ddd;
+  }
+  .pod-icon {
+    width: 55px; height: 55px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  .podcast-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .podcast-item .pod-host { font-size: 0.78rem; color: var(--mid); margin-bottom: 0.4rem; }
+  .podcast-item p { font-size: 0.83rem; line-height: 1.55; color: #666; font-weight: 300; }
+  .pod-lean {
+    font-size: 0.7rem;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.08em;
+    padding: 0.15rem 0.4rem;
+    display: inline-block;
+    margin-top: 0.3rem;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">M<span>|</span>P</a>
+  <a href="history.html">History</a>
+  <a href="misinformation.html">Misinformation</a>
+  <a href="polarization.html">Polarization</a>
+  <a href="socialmedia.html">Social Media</a>
+  <a href="campaigning.html">Campaigning</a>
+  <a href="random.html" class="active">Random</a>
+  <a href="cartoons.html">Cartoons</a>
+  <a href="conclusion.html">Conclusion</a>
+  <a href="bibliography.html">Bibliography</a>
+</nav>
+
+<div class="page-hero">
+  <div class="section-label">Chapter 06</div>
+  <h1>Alternative &<br><em>Opinion</em> Media</h1>
+  <p>Beyond the nightly news — the world of cable news, political podcasts, and partisan media that shapes how millions of Americans understand politics.</p>
+</div>
+
+<div class="content">
+
+  <div class="card" style="margin-bottom:2.5rem;">
+    <div class="section-label">What Is Opinion Media?</div>
+    <br>
+    <p style="font-size:1rem;line-height:1.75;font-weight:300;color:#444;">There's an important difference between <strong>news reporting</strong> (journalists gathering facts about events) and <strong>opinion media</strong> (commentators analyzing, criticizing, or advocating). Much of cable news and political podcasting is primarily opinion — but it's often packaged to feel like straight news. Understanding this distinction is essential for being an informed media consumer.</p>
+  </div>
+
+  <div class="section-label">Major Cable & Online News Networks</div>
+  <div class="media-cards">
+    <div class="media-card">
+      <div class="lean lean-right">RIGHT-LEANING</div>
+      <h3>Fox News</h3>
+      <div class="media-type">📺 Cable TV · Founded 1996</div>
+      <p>The highest-rated cable news network in the U.S., Fox News is known for its conservative commentary and prime-time opinion hosts. While it has a news division with traditional reporting, its most-watched shows (Hannity, Tucker, Ingraham) are explicitly opinion programming. Its framing of issues consistently favors Republican positions.</p>
+      <div class="audience">Avg. viewer: 65+, predominantly Republican, Southern and rural areas</div>
+    </div>
+    <div class="media-card">
+      <div class="lean lean-left">LEFT-LEANING</div>
+      <h3>MSNBC</h3>
+      <div class="media-type">📺 Cable TV · Founded 1996</div>
+      <p>Created the same year as Fox News, MSNBC evolved from a general news channel into a left-leaning opinion network, especially in primetime. Rachel Maddow, Joy Reid, and others offer heavily liberal analysis. Like Fox, MSNBC has straight news programming, but its identity is built on political commentary that favors Democratic positions.</p>
+      <div class="audience">Avg. viewer: 55+, predominantly Democratic, urban and suburban</div>
+    </div>
+    <div class="media-card">
+      <div class="lean lean-center">CENTER / VARYING</div>
+      <h3>CNN</h3>
+      <div class="media-type">📺 Cable TV · Founded 1980</div>
+      <p>The original 24-hour news network, CNN has attempted to position itself as more centrist than Fox or MSNBC, though critics from both sides argue otherwise. Has undergone major changes in recent years trying to reach a broader audience. Strong on breaking news and investigative journalism, weaker on opinion leadership.</p>
+      <div class="audience">Broad demographic, airports, hotels — widely viewed internationally</div>
+    </div>
+    <div class="media-card">
+      <div class="lean lean-right">ALTERNATIVE RIGHT</div>
+      <h3>Breitbart</h3>
+      <div class="media-type">🌐 Online News · Founded 2007</div>
+      <p>Breitbart is a far-right online news site known for nationalist, anti-immigration, and anti-establishment content. Under Steve Bannon, it became a major force in conservative media and helped shape the ideological ground for Trump's 2016 campaign. Mainstream media organizations generally do not consider it a credible news source.</p>
+      <div class="audience">Far-right audience, strong overlap with MAGA movement</div>
+    </div>
+    <div class="media-card">
+      <div class="lean lean-left">ALTERNATIVE LEFT</div>
+      <h3>The Young Turks</h3>
+      <div class="media-type">🌐 Online / YouTube · Founded 2002</div>
+      <p>One of the first major online political news and commentary channels, TYT offers left-progressive analysis. Known for being highly critical of both Republicans and centrist Democrats. A major force in shaping online progressive media culture and one of the first political channels to find a massive audience on YouTube.</p>
+      <div class="audience">Progressive youth audience, online-first, under 40</div>
+    </div>
+    <div class="media-card">
+      <div class="lean lean-opinion">OPINION / SATIRE</div>
+      <h3>The Daily Show</h3>
+      <div class="media-type">📺 Comedy TV / Online · Founded 1996</div>
+      <p>Satirical news program that has been a major cultural force in political media. Hosted by Jon Stewart (and later Trevor Noah, now back to Stewart), it shaped how a generation of young Americans consumed political news — through comedy and irony. Research shows its viewers often tested more politically informed than those of straight news.</p>
+      <div class="audience">Young adults, college-educated, left-leaning</div>
+    </div>
+  </div>
+
+  <hr class="styled">
+
+  <div class="section-label">The Podcast Revolution</div>
+  <p style="font-size:0.9rem;color:var(--mid);margin-bottom:1.5rem;font-style:italic;">Political podcasts have become a dominant force in political information — especially for under-50 voters. Here's a look at the major players across the spectrum.</p>
+
+  <div class="podcast-list">
+    <div class="podcast-item">
+      <div class="pod-icon" style="background:#8b1a1a;">🎙️</div>
+      <div>
+        <h4>The Joe Rogan Experience</h4>
+        <div class="pod-host">Host: Joe Rogan · 30M+ listeners per episode</div>
+        <p>The most downloaded podcast in the world. Rogan covers politics, culture, comedy, science, and MMA in multi-hour conversations. Difficult to categorize politically — he has hosted both Bernie Sanders and Donald Trump, and endorsed Bernie Sanders, Tulsi Gabbard, and Trump at different times. His massive, mostly-male audience makes him a critical media force in elections.</p>
+        <span class="pod-lean" style="background:#888;color:white;">LIBERTARIAN / CENTRIST / VARYING</span>
+      </div>
+    </div>
+    <div class="podcast-item">
+      <div class="pod-icon" style="background:#1a3c8e;">🎙️</div>
+      <div>
+        <h4>Pod Save America</h4>
+        <div class="pod-host">Hosts: Former Obama staffers Jon Favreau, Tommy Vietor, Jon Lovett · 3M+ weekly</div>
+        <p>Founded by Obama White House alumni, Pod Save America is the flagship liberal political podcast. Known for sharp political analysis, news breakdowns, and progressive advocacy. A major fundraising and voter registration tool during elections. Represents a new model of media: campaign insiders turned independent commentators.</p>
+        <span class="pod-lean" style="background:#1a3c8e;color:white;">LEFT-LEANING</span>
+      </div>
+    </div>
+    <div class="podcast-item">
+      <div class="pod-icon" style="background:#8b1a1a;">🎙️</div>
+      <div>
+        <h4>The Ben Shapiro Show</h4>
+        <div class="pod-host">Host: Ben Shapiro · Daily Wire · 2M+ daily downloads</div>
+        <p>One of the most downloaded conservative podcasts. Shapiro offers rapid-fire conservative commentary, debates, and news analysis. Known for the phrase "facts don't care about your feelings." The Daily Wire, which he co-founded, has become a major conservative media empire, expanding into film and streaming content.</p>
+        <span class="pod-lean" style="background:#8b1a1a;color:white;">CONSERVATIVE</span>
+      </div>
+    </div>
+    <div class="podcast-item">
+      <div class="pod-icon" style="background:#555;">🎙️</div>
+      <div>
+        <h4>The Daily (New York Times)</h4>
+        <div class="pod-host">Host: Michael Barbaro · 4M+ daily downloads</div>
+        <p>The New York Times' flagship daily podcast, widely considered one of the best journalism podcasts in the world. Long-form reported stories on the day's biggest news events. One of the highest-quality examples of audio journalism — sourced from the Times' reporting with added depth and context. Consistent top charts placement since 2017.</p>
+        <span class="pod-lean" style="background:#555;color:white;">CENTER-LEFT / JOURNALISM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quiz -->
+  <div class="quiz-box" style="margin-top:3rem;">
+    <h3>Alternative Media Quiz</h3>
+    <div class="quiz-question">
+      <p><strong>Q1:</strong> What is the key difference between "news reporting" and "opinion media"?</p>
+      <div class="quiz-options">
+        <button onclick="answer(this,'wrong','rq1')">A) News reporting is always online; opinion media is always on TV</button>
+        <button onclick="answer(this,'correct','rq1')">B) News reporting focuses on gathering and presenting facts about events; opinion media analyzes, advocates, or editorializes</button>
+        <button onclick="answer(this,'wrong','rq1')">C) News reporting is free; opinion media requires subscriptions</button>
+        <button onclick="answer(this,'wrong','rq1')">D) There is no meaningful difference — all media is opinion</button>
+      </div>
+      <div class="quiz-feedback" id="rq1-fb"></div>
+    </div>
+    <div class="quiz-question">
+      <p><strong>Q2:</strong> Why do political campaigns care so much about podcast appearances?</p>
+      <div class="quiz-options">
+        <button onclick="answer(this,'wrong','rq2')">A) Podcasts are required by FEC to carry equal political content</button>
+        <button onclick="answer(this,'wrong','rq2')">B) Podcasts are cheaper than TV ads</button>
+        <button onclick="answer(this,'correct','rq2')">C) Podcasts reach large, engaged audiences — often younger voters who don't watch traditional TV news</button>
+        <button onclick="answer(this,'wrong','rq2')">D) Podcast listeners always vote in higher numbers</button>
+      </div>
+      <div class="quiz-feedback" id="rq2-fb"></div>
+    </div>
+  </div>
+</div>
+
+<footer style="background:var(--ink);color:#666;text-align:center;padding:2rem;font-size:0.8rem;letter-spacing:0.05em;margin-top:3rem;">
+  MEDIA IN POLITICS &nbsp;|&nbsp; BY ANUPAMA BARUA
+</footer>
+
+<script>
+function answer(btn, result, qid) {
+  const opts = btn.parentElement.querySelectorAll('button');
+  opts.forEach(b => b.disabled = true);
+  btn.classList.add(result);
+  const fb = document.getElementById(qid + '-fb');
+  fb.textContent = result === 'correct' ? '✓ Correct!' : '✗ Not quite — review the definitions above.';
+  fb.style.color = result === 'correct' ? '#4caf50' : '#e74c3c';
+}
+</script>
+</body>
+</html>
